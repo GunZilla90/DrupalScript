@@ -7,7 +7,7 @@ CURRENTBRANCH=$(git rev-parse --abbrev-ref HEAD)
 if [ "$PROTECTEDBRANCH" == "$CURRENTBRANCH" ]; then
     #RANDOMBRANCH=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 8 | head -n 1)
     DATE = $(date)
-    RANDOMBRANCH = "update/drupal_update_$DATE"
+    RANDOMBRANCH = $(cat "update/drupal_update_test")
     git checkout -b $RANDOMBRANCH master
 
 
